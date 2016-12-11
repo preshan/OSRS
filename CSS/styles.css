@@ -1,0 +1,90 @@
+
+  .affix + .container-fluid {
+      padding: 15px 15px 15px 15px;
+  }
+  .logo{
+      
+     float: left;
+     padding: 5px 10px 10px 10px;
+    
+  }
+  .navbar {
+    margin-bottom: 0;
+ 
+    
+    border: 0;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 2px;
+    border-radius: 0;
+}
+.bodyleft{
+    padding: 20px 110px 60px 110px;
+   
+   
+  }
+ 
+.header-styles{
+    
+   text-align: center;
+     text-shadow: rgba(0, 0, 0, 0.5980392) 0px 3px 5px, rgba(255, 255, 255, 0.298039) 0px -5px 35px;
+    letter-spacing: 4px;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #009688 !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+ul.nav.nav-tabs {
+    text-align: right;
+}
+
+.nav-tabs>li {
+    float: none;
+    display: inline-block;
+}
+td {
+    padding: 5px;
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
