@@ -8,19 +8,19 @@
         <script src="JS/jquery.min.js" type="text/javascript"></script>
         <script src="JS/jquery.min.js"></script>
         <script src="JS/bootstrap.min.js"></script>
-        <title>JSP Page</title>
+        <title>Register</title>
     </head>
     <body >
-        <div  class="w3-row w3-padding " id='basicdetails'>
+        <div  class="w3-row w3-padding " id='basicdetails' >
             <div class="w3-col m12 l8 w3-container   w3-padding w3-card-2" >
 
                 <header class="w3-container w3-teal">
                     <h2>Basic Information</h2>
                 </header>
-                <form class="w3-container w3-form">
+                <form class="w3-container w3-form" id='basicdetailform'>
                     <div >
                         <p class="w3-text-teal" ><b>Advanced Technological Institute</b></p> 
-                        <select class="w3-select" id='institute'  >
+                        <select class="w3-select" id='institute' name='institute'  >
                             <option value=""  disabled="" selected="">Choose Advanced Technological Institute</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
@@ -29,7 +29,7 @@
                     </div>
                     <div   >
                         <p class="w3-text-teal"><b>Course</b></p> 
-                        <select class="w3-select" id='course' >
+                        <select class="w3-select" id='course' name='course' >
                             <option value="" disabled=""  selected="">Choose a Course</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
@@ -64,7 +64,7 @@
                     </label>
 
                     <p class="w3-text-teal "><b>Administrative District</b></p> 
-                    <select class="w3-select" id='district'>
+                    <select class="w3-select" id='district' name='district'>
                         <option value="" disabled="" selected="" >Choose Administrative District</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
@@ -148,9 +148,15 @@
                     
                     $("#contactdetails").css("display", "");
 
+                   
+                    $.post("BasicDetails.php", $('#basicdetailform').serialize() ,function(data){});
+
+
                 }
                 
             }
+
+
             function IsValidNIC(iNIC) {
 
                 var sRange = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -346,7 +352,7 @@
                                    class="w3-closebtn">&times;</span>
                                 <h3>Add Results</h3>
                              </header>
-                             <input class="w3-input w3-border" style='padding-top:10px' id='searchsubject1' onkeypress='searchtext();'  onchange ="this.onkeypress();" onpaste="this.onkeypress();" oninput = "this.onkeypress();"  placeholder='Search Subjects'type="text">
+                             <input class="w3-input w3-border" style='padding-top:10px' id='searchsubject1' onkeypress='searchtext()'  onchange ="this.onkeypress(),searchtext()" onpaste="this.onkeypress(),searchtext()" oninput = "this.onkeypress(),searchtext()"  placeholder='Search Subjects'type="text">
                              <div class="w3-container" style='overflow:auto;' id='subjectmodel1' >
                              
                                 <table class="w3-table w3-striped" id='subject'>
@@ -402,26 +408,30 @@
                         var textheadings='<tr id="olsubjheading">\n'
                                   +'<th >Subject Name</th>\n'
                                   +'<th>Grade</th>\n'
-                                  +'</tr>\n';
-                        var text='<td>'+text+'</td>\n'
+                                  +'</tr>';
+                        var text='<tr id="alsubjecttr'+key+'"><td>'+text+'</td>\n'
                                   +'<td>'+$(gradeid).text()+'</td>\n'
-                                  +'<input type="hidden" id="alsubjectresult'+key+'" value="'+$(gradeid).val()+'"/>\n';
+                                  +'<input type="hidden" id="alsubjectresult'+key+'" value="'+$(gradeid).val()+'"/></tr>\n';
                                  
 
                         if($('#olsubjheading').length){
-                            text='<tr>\n'
-                                +text+
-                                '</tr>\n';
+                           
                             $('#olsubjheading').after(text);
                         }
                         else{
                             text=textheadings+text;
                             document.getElementById("appendtext").innerHTML = text;
                         }
-                        $('#addsubjectbtn'+key).after('<span id="helptext'+key+'" style="color:#009688;"><i style="color:#009688" class="glyphicon glyphicon-ok"></i> Added</span>');
+                        $('#addsubjectbtn'+key).after('<span id="helptext'+key+'" style="color:#009688; font-size:11px;"><i style="color:#009688" class="glyphicon glyphicon-ok"></i> Added</span>');
                         $('#addsubjectbtn'+key).hide();
                         $('#removesubjectbtn'+key).show();
                     }
+                       }
+                       function removeText(id,key){
+                        $('#alsubjecttr'+key).remove();
+                        $('#addsubjectbtn'+key).show();
+                        $('#removesubjectbtn'+key).hide();
+                        $('#helptext'+key).remove();
                        }
                     </script>
                     <!-- ***********************model*************************-->

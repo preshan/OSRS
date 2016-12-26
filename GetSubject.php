@@ -3,12 +3,27 @@ include('DBconnection.php');
 $q = '';
 $q = $_REQUEST["q"];
 
-	$connection = db_connect();
-  $query = 'select * from olsubjectmaster where (ifnull("'.$q.'","")="" or SubjectID like "'. $q .'%" or SubjectID like "% '. $q .'%" ) ORDER BY SubjectID';
-    $result = mysqli_query($connection,$query);
-	
+  $connection = db_connect();
+  $query = 'select * from olsubjectmaster where (ifnull(?,"")="" or SubjectID like ? or SubjectID like ? ) ORDER BY SubjectID';
+
+  $stmt = $connection->stmt_init();
+if(!$stmt->prepare($query))
+{
+    print "Failed to prepare statement\n";
+}
+else
+{
+  $stmt->bind_param("sss", $param1, $param2, $param3);
+
+  $param1 = $q;
+  $param2 = $q."%";
+  $param3 = "%".$q;
+  
+   $stmt->execute();
+   $result = $stmt->get_result();
+  
     $value='';
-	while($row = $result->fetch_assoc()) {
+  while($row = $result->fetch_assoc()) {
        $value=$value.'<tr>
           <td>'.$row["SubjectID"].'</td>
           <td><select class="w3-select w3-border" id="alsubject'.$row["SubjectKey"].'" name="option">
@@ -26,6 +41,7 @@ $q = $_REQUEST["q"];
           </td>
        </tr>';
    }
+ }
    echo $value;    
 
 ?>
