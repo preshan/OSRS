@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2016 at 06:36 AM
+-- Generation Time: Dec 31, 2016 at 03:23 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -277,16 +277,16 @@ CREATE TABLE IF NOT EXISTS `studentatimap` (
   `ApplicationID` varchar(100) NOT NULL,
   `StudentKey` int(11) NOT NULL,
   `ATIKey` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studentatimap`
 --
 
 INSERT INTO `studentatimap` (`ApplicationKey`, `ApplicationID`, `StudentKey`, `ATIKey`) VALUES
-(1, '', 10, 1),
-(2, '', 11, 1),
-(3, 'A16112', 12, 1);
+(57, 'A16155', 55, 1),
+(58, 'A16156', 56, 1),
+(59, 'A16157', 57, 1);
 
 -- --------------------------------------------------------
 
@@ -304,9 +304,9 @@ CREATE TABLE IF NOT EXISTS `studentcoursemap` (
 --
 
 INSERT INTO `studentcoursemap` (`StudentKey`, `CourseKey`) VALUES
-(10, 2),
-(11, 2),
-(12, 2);
+(55, 1),
+(56, 1),
+(57, 1);
 
 -- --------------------------------------------------------
 
@@ -324,9 +324,8 @@ CREATE TABLE IF NOT EXISTS `studentdistrictmap` (
 --
 
 INSERT INTO `studentdistrictmap` (`StudentKey`, `DistrictKey`) VALUES
-(10, 1),
-(11, 1),
-(12, 1);
+(56, 1),
+(57, 1);
 
 -- --------------------------------------------------------
 
@@ -343,19 +342,19 @@ CREATE TABLE IF NOT EXISTS `studentmaster` (
   `AddressL3` varchar(500) NOT NULL,
   `DateOfBirth` date NOT NULL,
   `NIC` varchar(500) NOT NULL,
-  `Sex` char(1) NOT NULL,
+  `Gender` char(1) NOT NULL,
   `ContactNo` varchar(500) NOT NULL,
   `ModifiedUserKey` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `studentmaster`
 --
 
-INSERT INTO `studentmaster` (`StudentKey`, `NameWithInitials`, `Name`, `AddressL1`, `AddressL2`, `AddressL3`, `DateOfBirth`, `NIC`, `Sex`, `ContactNo`, `ModifiedUserKey`) VALUES
-(10, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-08', '932923475V', 'm', '', 0),
-(11, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-08', '932923475V', 'm', '', 0),
-(12, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-08', '932923475V', 'm', '', 0);
+INSERT INTO `studentmaster` (`StudentKey`, `NameWithInitials`, `Name`, `AddressL1`, `AddressL2`, `AddressL3`, `DateOfBirth`, `NIC`, `Gender`, `ContactNo`, `ModifiedUserKey`) VALUES
+(55, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0),
+(56, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0),
+(57, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0);
 
 -- --------------------------------------------------------
 
@@ -519,12 +518,12 @@ ALTER TABLE `olsubjectmaster`
 -- AUTO_INCREMENT for table `studentatimap`
 --
 ALTER TABLE `studentatimap`
-  MODIFY `ApplicationKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `ApplicationKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT for table `studentmaster`
 --
 ALTER TABLE `studentmaster`
-  MODIFY `StudentKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `StudentKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `usermaster`
 --
