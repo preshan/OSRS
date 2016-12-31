@@ -1,8 +1,13 @@
 <?php
+
+session_start();
+
 include('DBconnection.php');
 
+
+
   $connection = db_connect();
-  $query1 = 'insert into studentmaster( NameWithInitials, Name, DateOfBirth, NIC, Sex) VALUES (?,?,?,?,?)';
+  $query1 = 'insert into studentmaster( NameWithInitials, Name, DateOfBirth, NIC, Gender) VALUES (?,?,?,?,?)';
 
    $query2 = 'insert into studentdistrictmap (StudentKey,DistrictKey) values (?,?)';
 
@@ -28,13 +33,10 @@ include('DBconnection.php');
       $param3 = $_POST['dob'];
       $param4 = $_POST['nic'];
       $param5 = $_POST['gender'];
-
-      $param6 = $_POST['district'];
-      $param7 = $_POST['course'];
-      $param8 = $_POST['institute'];
       
       $stmt1->execute();
       $StudentKey = $connection->insert_id;
+      $_SESSION["StudentKey"] = $StudentKey;
        
      }
 
@@ -100,4 +102,13 @@ include('DBconnection.php');
       $stmt5->execute();
        
      }
+
+      $query6 = "SELECT ApplicationID FROM studentatimap where StudentKey = ".$StudentKey." and ATIKey = ".$_POST['institute'];
+      $result = $connection->query($query6);
+      $row = $result->fetch_assoc();
+      $_SESSION["ApplicationID"] = $row['ApplicationID'];
+  
+    
+
+
 ?>
