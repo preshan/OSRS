@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2016 at 03:23 PM
+-- Generation Time: Jan 01, 2017 at 05:18 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -277,16 +277,7 @@ CREATE TABLE IF NOT EXISTS `studentatimap` (
   `ApplicationID` varchar(100) NOT NULL,
   `StudentKey` int(11) NOT NULL,
   `ATIKey` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentatimap`
---
-
-INSERT INTO `studentatimap` (`ApplicationKey`, `ApplicationID`, `StudentKey`, `ATIKey`) VALUES
-(57, 'A16155', 55, 1),
-(58, 'A16156', 56, 1),
-(59, 'A16157', 57, 1);
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -299,15 +290,6 @@ CREATE TABLE IF NOT EXISTS `studentcoursemap` (
   `CourseKey` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `studentcoursemap`
---
-
-INSERT INTO `studentcoursemap` (`StudentKey`, `CourseKey`) VALUES
-(55, 1),
-(56, 1),
-(57, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -318,14 +300,6 @@ CREATE TABLE IF NOT EXISTS `studentdistrictmap` (
   `StudentKey` int(11) NOT NULL,
   `DistrictKey` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentdistrictmap`
---
-
-INSERT INTO `studentdistrictmap` (`StudentKey`, `DistrictKey`) VALUES
-(56, 1),
-(57, 1);
 
 -- --------------------------------------------------------
 
@@ -345,16 +319,7 @@ CREATE TABLE IF NOT EXISTS `studentmaster` (
   `Gender` char(1) NOT NULL,
   `ContactNo` varchar(500) NOT NULL,
   `ModifiedUserKey` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentmaster`
---
-
-INSERT INTO `studentmaster` (`StudentKey`, `NameWithInitials`, `Name`, `AddressL1`, `AddressL2`, `AddressL3`, `DateOfBirth`, `NIC`, `Gender`, `ContactNo`, `ModifiedUserKey`) VALUES
-(55, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0),
-(56, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0),
-(57, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0);
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -518,12 +483,12 @@ ALTER TABLE `olsubjectmaster`
 -- AUTO_INCREMENT for table `studentatimap`
 --
 ALTER TABLE `studentatimap`
-  MODIFY `ApplicationKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
+  MODIFY `ApplicationKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `studentmaster`
 --
 ALTER TABLE `studentmaster`
-  MODIFY `StudentKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+  MODIFY `StudentKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `usermaster`
 --

@@ -254,16 +254,11 @@
                  url:'GetSessionDetails.php',
                  data:{'getApplicationID':''},
                  success: function(data){
+                  $('#ApplicationID').html(data);
                  }
                   });
 
-                 $.ajax({
-                 type: 'POST',    
-                 url:'GetDetails.php',
-                 data:{'getBasicDetails':''},
-                 success: function(data){
-                      }
-                  });
+                 
          
          
              }
@@ -335,30 +330,71 @@
          
          
       </script>
+      <!--*****************contactdetails***************************************************-->
       <div  class="w3-row w3-padding " id='contactdetails' style='display: ;'>
          <div class="w3-col m12 l8 w3-container   w3-padding w3-card-2" >
             <header class="w3-container w3-teal">
                <h2>Contact Details</h2>
             </header>
-            <form class="w3-container w3-form">
+            <form class="w3-container w3-form" id='contactdetailsform' >
                <div class="w3-group">      
-                  <input class="w3-input" type="text" id='addressl1' name="address_line1" placeholder="Address line1" required="">
+                  <input class="w3-input" type="text" id='addressl1' value='<?php
+                  if(isset($_SESSION["BasicDetails"])){
+                    echo $row['AddressL1'];
+                  }
+                  else{
+                    echo '';
+                  }
+                 
+                  ?>' name="address_line1" placeholder="Address line1" required="">
                   <label class="w3-label">Permanent Address</label>
-                  <input class="w3-input" id='addressl2' type="text" name="address_line2" placeholder="Address line2" required="">
+                  <input class="w3-input" id='addressl2' value='<?php
+                  if(isset($_SESSION["BasicDetails"])){
+                    echo $row['AddressL2'];
+                  }
+                  else{
+                    echo '';
+                  }
+                 
+                  ?>' type="text" name="address_line2" placeholder="Address line2" required="">
                   <label class="w3-label"></label>
-                  <input  type="text"  class="w3-input" id='addressl3' name="address_line3" placeholder="Address line3" required="">
+                  <input  type="text"  class="w3-input" id='addressl3' value='<?php
+                  if(isset($_SESSION["BasicDetails"])){
+                    echo $row['AddressL3'];
+                  }
+                  else{
+                    echo '';
+                  }
+                 
+                  ?>' name="address_line3" placeholder="Address line3" required="">
                   <label class="w3-label"></label>
                </div>
                <div class="w3-group">      
-                  <input class="w3-input" id='contactno' type="text"  name="contact_no1" placeholder="eg: 091xxxxxxx , 07xxxxxxxx" required="">
+                  <input class="w3-input" id='contactno' value='<?php
+                  if(isset($_SESSION["BasicDetails"])){
+                    echo $row['ContactNo'];
+                  }
+                  else{
+                    echo '';
+                  }
+                 
+                  ?>' type="text"  name="contact_no" placeholder="eg: 091xxxxxxx " required="">
                   <label class="w3-label">Contact Phone Number</label>
                </div>
                <div class="w3-group">      
-                  <input class="w3-input" type="text" id='email' name="email" placeholder="eg: abc@mail.com">
+                  <input class="w3-input" type="text" id='email' value='<?php
+                  if(isset($_SESSION["BasicDetails"])){
+                    echo $row['Email'];
+                  }
+                  else{
+                    echo '';
+                  }
+                 
+                  ?>' name="email" placeholder="eg: abc@mail.com">
                   <label class="w3-label">Email</label>
                </div>
                <div class="w3-row " style='float:right'> 
-                  <input type='button'  onclick='$("#basicdetails").css("display", "");$("#contactdetails").css("display", "none");disableBasicDetails();' value='&#10094; Previous ' class="w3-btn w3-teal w3-section"/> 
+                  <input type='button'  onclick='$("#basicdetails").css("display", "");$("#contactdetails").css("display", "none");' value='&#10094; Previous ' class="w3-btn w3-teal w3-section"/> 
                   <input type='button'  onclick='validateContact()' value='Next &#10095;' class="w3-btn w3-teal w3-section"/>
                </div>
             </form>
@@ -388,15 +424,6 @@
          </div>
       </div>
       <script>
-         function disableBasicDetails(){
-            $('#basicdetails input').attr('disabled','disabled');
-            $('#basicdetails input').css('cursor','not-allowed');
-            $('#basicdetails select').attr('disabled','disabled');
-            $('#basicdetails select').css('cursor','not-allowed');
-            $('#basicdetailsbutton').after("<input style='float:right' type='button' class='w3-btn w3-teal w3-section' onclick='basicDetailsNext()' value='Next &#10095;'>");
-            $('#basicdetailnextbtn').css('display','none');
-         }
-
          function basicDetailsNext(){
             $('#basicdetails').css('display', 'none');
             $('#contactdetails').css('display', '');
@@ -429,6 +456,8 @@
              
                  $("#contactdetails").css("display", "none");
                  $("#educationqulification").css("display", "");
+
+                 $.post("ContactDetails.php", $('#contactdetailsform').serialize() ,function(data){});
          
              }
          
