@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2016 at 03:23 PM
+-- Generation Time: Mar 31, 2017 at 06:39 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -29,152 +29,13 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `alsubjectmaster` (
   `SubjectKey` int(11) NOT NULL,
   `SubjectID` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `alsubjectmaster`
 --
 
 INSERT INTO `alsubjectmaster` (`SubjectKey`, `SubjectID`) VALUES
-(1, 'English Language'),
-(2, 'Mathematics'),
-(3, 'Science & Technology'),
-(4, 'Buddhism'),
-(5, 'Christianity (RC)'),
-(6, 'Christianity'),
-(7, 'Saivism'),
-(8, 'Hinduism'),
-(9, 'Islam'),
-(10, 'Social Studies & History'),
-(11, 'Sinhala Language & Lit'),
-(12, 'Tamil Language & Lit'),
-(13, 'Art'),
-(14, 'Dancing ( Sinhala)'),
-(15, 'Dancing ( Baratha)'),
-(16, 'Music ( Oriental)'),
-(17, 'Music ( Carnatic)'),
-(18, 'Music ( Western)'),
-(19, 'Business & Accounting Studies'),
-(20, 'Drama & Theatre'),
-(21, 'Agriculture & Food Technology'),
-(22, 'Horticulture'),
-(23, 'Animal Husbandry'),
-(24, 'Tamil Literature'),
-(25, 'Development Studies'),
-(26, 'Geography'),
-(27, 'Health & Physical Education'),
-(28, 'Inland Bio - Resources Technology'),
-(29, 'Marine Bio - Resources Technology'),
-(30, 'Food Science & Food Technology'),
-(31, 'Short hand & Typing ( Sinhala)'),
-(32, 'Construction Technology'),
-(33, 'Mechanical Technology'),
-(34, 'Arts & Crafts'),
-(35, 'Electricity & Electronics'),
-(36, 'Home Economics'),
-(37, 'Physical Education'),
-(38, 'Appreciation of English Literary Texts'),
-(39, 'Sinhala Literature'),
-(40, 'Arabic Literature'),
-(41, 'Pali'),
-(42, 'Sanskrit'),
-(43, 'Arabic'),
-(44, 'Second Language Sinhala'),
-(45, 'Second Language'),
-(46, 'Latin'),
-(47, 'French'),
-(48, 'Malay'),
-(49, 'History'),
-(50, 'Hindi'),
-(51, 'Japanese'),
-(52, 'German'),
-(53, 'Information & Communication Technology'),
-(54, 'Entrepreneurship Studies'),
-(55, 'Health & Physical Education'),
-(56, 'Communication & Media Studies'),
-(57, 'Citizenship Education & Governance / Civil & Governance'),
-(58, 'Fisheries & Food Technology'),
-(59, 'Design & Technology'),
-(60, 'Arts & Crafts');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `atidetails`
---
-
-CREATE TABLE IF NOT EXISTS `atidetails` (
-  `ATIKey` int(11) NOT NULL,
-  `ATIID` varchar(500) NOT NULL,
-  `Location` varchar(500) NOT NULL,
-  `Address` varchar(500) NOT NULL,
-  `TP` varchar(100) NOT NULL,
-  `FAX` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `atidetails`
---
-
-INSERT INTO `atidetails` (`ATIKey`, `ATIID`, `Location`, `Address`, `TP`, `FAX`) VALUES
-(1, 'test', '', '', '', ''),
-(2, 'test2', '', '', '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coursemaster`
---
-
-CREATE TABLE IF NOT EXISTS `coursemaster` (
-  `CourseKey` int(11) NOT NULL,
-  `CourseID` varchar(500) NOT NULL,
-  `Duration` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coursemaster`
---
-
-INSERT INTO `coursemaster` (`CourseKey`, `CourseID`, `Duration`) VALUES
-(1, 'HNDIT', ''),
-(2, 'HNDE', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `districtdetails`
---
-
-CREATE TABLE IF NOT EXISTS `districtdetails` (
-  `DistrictKey` int(11) NOT NULL,
-  `DistrictID` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `districtdetails`
---
-
-INSERT INTO `districtdetails` (`DistrictKey`, `DistrictID`) VALUES
-(1, 'Galle'),
-(2, 'Colombo');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `olsubjectmaster`
---
-
-CREATE TABLE IF NOT EXISTS `olsubjectmaster` (
-  `SubjectKey` int(11) NOT NULL,
-  `SubjectID` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `olsubjectmaster`
---
-
-INSERT INTO `olsubjectmaster` (`SubjectKey`, `SubjectID`) VALUES
 (5, 'Physics'),
 (6, 'Chemistry'),
 (7, 'Biology'),
@@ -244,6 +105,155 @@ INSERT INTO `olsubjectmaster` (`SubjectKey`, `SubjectID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `atidetails`
+--
+
+CREATE TABLE IF NOT EXISTS `atidetails` (
+  `ATIKey` int(11) NOT NULL,
+  `ATIID` varchar(500) NOT NULL,
+  `Location` varchar(500) NOT NULL,
+  `Address` varchar(500) NOT NULL,
+  `TP` varchar(100) NOT NULL,
+  `FAX` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `atidetails`
+--
+
+INSERT INTO `atidetails` (`ATIKey`, `ATIID`, `Location`, `Address`, `TP`, `FAX`) VALUES
+(1, 'ATI Galle', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coursemaster`
+--
+
+CREATE TABLE IF NOT EXISTS `coursemaster` (
+  `CourseKey` int(11) NOT NULL,
+  `CourseID` varchar(500) NOT NULL,
+  `Duration` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `coursemaster`
+--
+
+INSERT INTO `coursemaster` (`CourseKey`, `CourseID`, `Duration`) VALUES
+(21, 'Higher National Diploma in Accountancy (HNDA)', '4'),
+(22, 'Higher National Diploma in Agriculture (HNDT.Agri)', '3'),
+(23, 'Higher National Diploma in Building Services (HNDBS)', '3.5'),
+(24, 'Higher National Diploma in Building Services (HNDBS)', '2.5'),
+(25, 'Higher National Diploma in Business Administration (HNDBA)', '2.5'),
+(26, 'Higher National Diploma in English (HNDE)', '2.5'),
+(27, 'Higher National Diploma in Engineering - Civil', '3.5'),
+(28, 'Higher National Diploma in Engineering - Electrical', '3.5'),
+(29, 'Higher National Diploma in Engineering - Mechanical', '3.5'),
+(30, 'Higher National Diploma in Management (HNDM)', '3'),
+(31, 'Higher Nation Diploma in Information Technology (HNDIT)', '2.5'),
+(32, 'Higher Nation Diploma in Quantity Survey)', '2.5'),
+(33, 'Higher Nation Diploma in Tourism and Hospitality Management (HNDTHM)', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `districtdetails`
+--
+
+CREATE TABLE IF NOT EXISTS `districtdetails` (
+  `DistrictKey` int(11) NOT NULL,
+  `DistrictID` varchar(500) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `districtdetails`
+--
+
+INSERT INTO `districtdetails` (`DistrictKey`, `DistrictID`) VALUES
+(1, 'Galle'),
+(2, 'Colombo');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `olsubjectmaster`
+--
+
+CREATE TABLE IF NOT EXISTS `olsubjectmaster` (
+  `SubjectKey` int(11) NOT NULL,
+  `SubjectID` varchar(500) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `olsubjectmaster`
+--
+
+INSERT INTO `olsubjectmaster` (`SubjectKey`, `SubjectID`) VALUES
+(1, 'English Language'),
+(2, 'Mathematics'),
+(3, 'Science & Technology'),
+(4, 'Buddhism'),
+(5, 'Christianity (RC)'),
+(6, 'Christianity'),
+(7, 'Saivism'),
+(8, 'Hinduism'),
+(9, 'Islam'),
+(10, 'Social Studies & History'),
+(11, 'Sinhala Language & Lit'),
+(12, 'Tamil Language & Lit'),
+(13, 'Art'),
+(14, 'Dancing ( Sinhala)'),
+(15, 'Dancing ( Baratha)'),
+(16, 'Music ( Oriental)'),
+(17, 'Music ( Carnatic)'),
+(18, 'Music ( Western)'),
+(19, 'Business & Accounting Studies'),
+(20, 'Drama & Theatre'),
+(21, 'Agriculture & Food Technology'),
+(22, 'Horticulture'),
+(23, 'Animal Husbandry'),
+(24, 'Tamil Literature'),
+(25, 'Development Studies'),
+(26, 'Geography'),
+(27, 'Health & Physical Education'),
+(28, 'Inland Bio - Resources Technology'),
+(29, 'Marine Bio - Resources Technology'),
+(30, 'Food Science & Food Technology'),
+(31, 'Short hand & Typing ( Sinhala)'),
+(32, 'Construction Technology'),
+(33, 'Mechanical Technology'),
+(34, 'Arts & Crafts'),
+(35, 'Electricity & Electronics'),
+(36, 'Home Economics'),
+(37, 'Physical Education'),
+(38, 'Appreciation of English Literary Texts'),
+(39, 'Sinhala Literature'),
+(40, 'Arabic Literature'),
+(41, 'Pali'),
+(42, 'Sanskrit'),
+(43, 'Arabic'),
+(44, 'Second Language Sinhala'),
+(45, 'Second Language'),
+(46, 'Latin'),
+(47, 'French'),
+(48, 'Malay'),
+(49, 'History'),
+(50, 'Hindi'),
+(51, 'Japanese'),
+(52, 'German'),
+(53, 'Information & Communication Technology'),
+(54, 'Entrepreneurship Studies'),
+(55, 'Health & Physical Education'),
+(56, 'Communication & Media Studies'),
+(57, 'Citizenship Education & Governance / Civil & Governance'),
+(58, 'Fisheries & Food Technology'),
+(59, 'Design & Technology'),
+(60, 'Arts & Crafts');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `studentalexamdetailsmap`
 --
 
@@ -251,7 +261,9 @@ CREATE TABLE IF NOT EXISTS `studentalexamdetailsmap` (
   `StudentKey` int(11) NOT NULL,
   `Year` year(4) NOT NULL,
   `IndexNo` varchar(500) NOT NULL,
-  `Medium` varchar(500) NOT NULL
+  `Medium` varchar(500) NOT NULL,
+  `Zscore` int(11) NOT NULL,
+  `EnglishQulification` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -277,16 +289,7 @@ CREATE TABLE IF NOT EXISTS `studentatimap` (
   `ApplicationID` varchar(100) NOT NULL,
   `StudentKey` int(11) NOT NULL,
   `ATIKey` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentatimap`
---
-
-INSERT INTO `studentatimap` (`ApplicationKey`, `ApplicationID`, `StudentKey`, `ATIKey`) VALUES
-(57, 'A16155', 55, 1),
-(58, 'A16156', 56, 1),
-(59, 'A16157', 57, 1);
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -296,17 +299,9 @@ INSERT INTO `studentatimap` (`ApplicationKey`, `ApplicationID`, `StudentKey`, `A
 
 CREATE TABLE IF NOT EXISTS `studentcoursemap` (
   `StudentKey` int(11) NOT NULL,
-  `CourseKey` int(11) NOT NULL
+  `CourseKey` int(11) NOT NULL,
+  `Priority` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentcoursemap`
---
-
-INSERT INTO `studentcoursemap` (`StudentKey`, `CourseKey`) VALUES
-(55, 1),
-(56, 1),
-(57, 1);
 
 -- --------------------------------------------------------
 
@@ -318,14 +313,6 @@ CREATE TABLE IF NOT EXISTS `studentdistrictmap` (
   `StudentKey` int(11) NOT NULL,
   `DistrictKey` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentdistrictmap`
---
-
-INSERT INTO `studentdistrictmap` (`StudentKey`, `DistrictKey`) VALUES
-(56, 1),
-(57, 1);
 
 -- --------------------------------------------------------
 
@@ -343,18 +330,10 @@ CREATE TABLE IF NOT EXISTS `studentmaster` (
   `DateOfBirth` date NOT NULL,
   `NIC` varchar(500) NOT NULL,
   `Gender` char(1) NOT NULL,
+  `Email` varchar(500) NOT NULL,
   `ContactNo` varchar(500) NOT NULL,
   `ModifiedUserKey` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `studentmaster`
---
-
-INSERT INTO `studentmaster` (`StudentKey`, `NameWithInitials`, `Name`, `AddressL1`, `AddressL2`, `AddressL3`, `DateOfBirth`, `NIC`, `Gender`, `ContactNo`, `ModifiedUserKey`) VALUES
-(55, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0),
-(56, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0),
-(57, 'PP Kariyawasam', 'Preshan Pradeepa', '', '', '', '2016-12-14', '932923475V', 'm', '', 0);
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -493,7 +472,7 @@ ALTER TABLE `usermaster`
 -- AUTO_INCREMENT for table `alsubjectmaster`
 --
 ALTER TABLE `alsubjectmaster`
-  MODIFY `SubjectKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
+  MODIFY `SubjectKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=70;
 --
 -- AUTO_INCREMENT for table `atidetails`
 --
@@ -503,7 +482,7 @@ ALTER TABLE `atidetails`
 -- AUTO_INCREMENT for table `coursemaster`
 --
 ALTER TABLE `coursemaster`
-  MODIFY `CourseKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `CourseKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `districtdetails`
 --
@@ -513,17 +492,17 @@ ALTER TABLE `districtdetails`
 -- AUTO_INCREMENT for table `olsubjectmaster`
 --
 ALTER TABLE `olsubjectmaster`
-  MODIFY `SubjectKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=70;
+  MODIFY `SubjectKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `studentatimap`
 --
 ALTER TABLE `studentatimap`
-  MODIFY `ApplicationKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60;
+  MODIFY `ApplicationKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
 --
 -- AUTO_INCREMENT for table `studentmaster`
 --
 ALTER TABLE `studentmaster`
-  MODIFY `StudentKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+  MODIFY `StudentKey` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=88;
 --
 -- AUTO_INCREMENT for table `usermaster`
 --

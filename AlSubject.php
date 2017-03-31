@@ -3,7 +3,7 @@ include('DBconnection.php');
 
 function getAlSubjects($searchtext){
     $connection = db_connect();
-    $statement = $connection->prepare('select * from olsubjectmaster where (ifnull("?","")="" or SubjectID like "?%" or SubjectID like "% ?%" ) ORDER BY SubjectID');
+    $statement = $connection->prepare('select * from alsubjectmaster where (ifnull("?","")="" or SubjectID like "?%" or SubjectID like "% ?%" ) ORDER BY SubjectID');
 
     $statement->bind_param(1,$searchtext);
     $statement->bind_param(2,$searchtext);
